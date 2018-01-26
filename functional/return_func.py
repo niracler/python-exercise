@@ -1,11 +1,8 @@
-i = 0
-
 # 利用闭包返回一个计数器函数，每次调用它返回递增整数：
 def createCounter():
-    global i
     i = 0
     def counter():
-        global i
+        nonlocal i
         i = i + 1
         return i
     return counter
