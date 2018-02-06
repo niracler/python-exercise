@@ -30,6 +30,7 @@ def fillMyList(mlist, html):
 
 # 利用数据结构展示并输出结果
 def printMyList(mList):
+    # indent=1是格式化的模式,ensure_ascii=False解决编码问题
     jsonDumpsIndentStr = json.dumps(mList, indent=1,ensure_ascii=False)
     print(jsonDumpsIndentStr)
 
