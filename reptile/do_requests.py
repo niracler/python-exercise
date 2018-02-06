@@ -1,3 +1,5 @@
+import json
+import nltk
 import requests
 from bs4 import BeautifulSoup
 import bs4
@@ -18,18 +20,40 @@ def fillMyList(mlist, html):
     soup = BeautifulSoup(html, "html.parser")
     for tr in soup.find_all("article"):
         if isinstance(tr, bs4.element.Tag):
-            tds = tr('a',rel="bookmark")
-            mlist.append([tds[0].string, tds[1].string])
+            tds = tr('a', rel="bookmark")
+            mytry = tr.find('p')
+            # print(mytry)
+            mlist[tds[0].string] = {
+                "日期": tds[1].string,
+                "简介": mytry.get_text()
+            }
+
 
 # 利用数据结构展示并输出结果
-def printMyList(uList):
-    for i in mlist:
-        print(i[0], i[1], "\n")
+def printMyList(mList):
+    jsonDumpsIndentStr = json.dumps(mList, indent=1,ensure_ascii=False)
+    print(jsonDumpsIndentStr)
+
+
+# 读档
+def load(filename):
+    try:
+        with open(filename) as f:
+            mlist = json.load(f)
+    except:
+        mlist = {}
+    return mlist
+
+
+# 存档
+def save(filename, mlist):
+    with open(filename, 'w') as f: f.write(json.dumps(mlist, indent=1,ensure_ascii=False))
+
 
 if __name__ == "__main__":
-    mlist = []
+    mlist = load("info.json")
     url = "https://www.llss.fun/wp/"
     html = getHTMLText(url)
-    # print(getHTMLText(url)[:1000])
     fillMyList(mlist, html)
     printMyList(mlist)
+    save("info.json", mlist)
