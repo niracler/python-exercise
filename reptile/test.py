@@ -19,6 +19,7 @@ def fillUnivList(ulist, html):
     for tr in soup.find('tbody').children:   # 遍历tbody标签的孩纸
         if isinstance(tr,bs4.element.Tag):
             tds = tr('td') # 找到里面的td标签
+            print(tds)
             ulist.append([tds[0].string, tds[1].string, tds[2].string])# 将内容放入
 
 
