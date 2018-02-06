@@ -1,5 +1,4 @@
 import json
-import nltk
 import requests
 from bs4 import BeautifulSoup
 import bs4
