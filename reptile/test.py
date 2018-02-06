@@ -15,11 +15,11 @@ def getHTMLText(url):
 
 # 提取网页内容中信息到合适的数据结构
 def fillUnivList(ulist, html):
-    soup = BeautifulSoup(html, "html.parser")
-    for tr in soup.find('tbody').children:
+    soup = BeautifulSoup(html, "html.parser") # 煲一个靓汤
+    for tr in soup.find('tbody').children:   # 遍历tbody标签的孩纸
         if isinstance(tr,bs4.element.Tag):
-            tds = tr('td')
-            ulist.append([tds[0].string, tds[1].string, tds[2].string])
+            tds = tr('td') # 找到里面的td标签
+            ulist.append([tds[0].string, tds[1].string, tds[2].string])# 将内容放入
 
 
 # 利用数据结构展示并输出结果
