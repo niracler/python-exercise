@@ -4,7 +4,8 @@ import requests
 from bs4 import BeautifulSoup
 import bs4
 
-headers = {'User-Agent':'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:23.0) Gecko/20100101 Firefox/23.0'}
+headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:23.0) Gecko/20100101 Firefox/23.0'}
+
 
 def getHTMLText(url):
     try:
@@ -35,7 +36,7 @@ def fillMyList(article_list, html):
                 article_info["图片"] = article_img["src"]
                 # urlretrieve(article_info["图片"], article_info["图片"].split("/")[-1])
                 picture = requests.get(article_info["图片"], timeout=30, headers=headers)
-                fp = open(article_info["图片"].split("/")[-1], 'wb')
+                fp = open("img/" + article_info["图片"].split("/")[-1], 'wb')
                 fp.write(picture.content)
                 fp.close()
 
@@ -78,8 +79,9 @@ def driver(url, filename):
     fillMyList(mlist, html)
     # printMyList(mlist)
     save(filename, mlist)
+    print(url + " in " + filename)
 
 
 if __name__ == "__main__":
-    url = "https://www.llss.fun/wp/page/" + str(111)
-    driver(url, "info.json")
+    url = "https://www.llss.fun/wp/page/" + str(500)
+    driver(url, "info/info.json")
