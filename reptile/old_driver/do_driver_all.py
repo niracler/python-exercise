@@ -1,8 +1,4 @@
-import threading
-
-import time
-
-from reptile.old_driver.do_requests import driver
+from do_requests import driver
 
 for i in range(1, 500):
     url = "https://www.llss.fun/wp/page/" + str(i)
