@@ -2,6 +2,22 @@ import json
 import requests
 from bs4 import BeautifulSoup
 import bs4
+import pymysql
+
+connect = pymysql.Connect(
+    host='127.0.0.1',
+    port=3306,
+    user='root',
+    passwd='12345678',
+    db='mysql',
+    charset='utf8'
+)
+
+cur = connect.cursor()
+cur.execute("USE old_driver")
+
+# cur.execute("SELECT * FROM pages WHERE id=2")
+# print(cur.fetchone())
 
 headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:23.0) Gecko/20100101 Firefox/23.0'}
 
@@ -28,26 +44,37 @@ def fillMyList(article_list, html):
                 article_info = {}  # 创建对应的文章对象信息字典
 
                 article_bookmark = article('a', rel="bookmark")
+                article_info["标题"] = article_bookmark[0].string
                 article_info["日期"] = article_bookmark[1].string
                 article_info["网址"] = article_bookmark[0]["href"]
 
+                article_id = article["class"][0].split("-")[1]
+
                 article_img = article.find('img')
                 article_info["图片"] = article_img["src"]
-                # urlretrieve(article_info["图片"], article_info["图片"].split("/")[-1])
                 picture = requests.get(article_info["图片"], timeout=30, headers=headers)
-                fp = open("img/" + article_info["图片"].split("/")[-1], 'wb')
+                fp = open("img/" + article_id + ".jpg", 'wb')
                 fp.write(picture.content)
                 fp.close()
 
                 article_intro = article.find('p')
                 article_info["简介"] = article_intro.get_text()
 
-                article_list[article_bookmark[0].string] = article_info
+                article_list[article_id] = article_info
+
+                cur.execute("INSERT INTO pages (title, content, url, img_url) VALUES("
+                    + "\"" + str(article_info["标题"]) + "\","
+                    + "\"" + str(article_intro.get_text()) + "\","
+                    + "\"" + str(article_info["网址"]) + "\","
+                    + "\"" + str(article_info["图片"])
+                    + "\")"
+                )
+                cur.connection.commit()
 
                 # test
-                # print(article_bookmark[0]["href"])
-    except:
-        return "产生异常"
+                print(article["class"][0])
+    except Exception as e:
+        return print(e)
 
 
 # 利用数据结构展示并输出结果
@@ -79,8 +106,12 @@ def driver(url, filename):
     # printMyList(mlist)
     save(filename, mlist)
     print(url + " in " + filename)
+    print(cur.fetchone())
 
 
 if __name__ == "__main__":
-    url = "https://www.llss.fun/wp/page/" + str(500)
+    url = "https://www.llss.fun/wp/page/" + str(1)
     driver(url, "info/info.json")
+
+cur.close()
+connect.close()

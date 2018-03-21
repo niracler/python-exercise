@@ -9,3 +9,4 @@ def getHTMLText(url="http://www.llss.pw/wp/"):
         return r.text
     except:
         return "产生异常"
+# CREATE TABLE pages (id BIGINT(7) NOT NULL AUTO_INCREMENT, title VARCHAR(200), content VARCHAR(10000),url VARCHAR(200), img_url VARCHAR(200) , cteated TIMESTAMP DEFAULT CURRENT_TIMESTAMP , PRIMARY KEY(id))
