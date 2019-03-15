@@ -23,3 +23,4 @@ if __name__ == '__main__':
     solution = Solution()
     result = solution.radom_a_list(alist)
     print(result)
+
