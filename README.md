@@ -29,14 +29,17 @@
 1. 下面代码的输出结果将是什么？
 
 ```python
-list = ['a','b','c','d','e']
-print(list[10:])
+list1 = ['a','b','c','d','e']
+print(list1[10:])
 ```
-
+    
 代码将会输出[]， 不会产生IndexError错误， 就像所期望的那样，尝试用超出成员的个数的index来获取某个列表的成员。例如尝试获取list[10]和之后的成员，会导致IndexError。然而， 尝试获取列表的切片，开始的index超过了成员个数不会产生IndexError， 而是仅仅返回一个空列表。这成为特别让人恶心的疑难杂症， 因为运行的时候没有产生错误，导致BUG很难被追踪到。
 
 1. [写一个列表生成式，产生一个公差为11的等差数列](interview_question/gen_list.py)
 
+1. [给定两个列表，怎么找出他们相同的元素和不同的元素？(集合)](interview_question/different_list.py)
+
+1. [请写出一段python代码实现删除list里面的重复元素？](interview_question/dif_sim.py)
 
 ### LeetCode热门面试问题
 
