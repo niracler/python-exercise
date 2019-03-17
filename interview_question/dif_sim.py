@@ -4,7 +4,7 @@
 # """
 
 
-class Solution:
+class Solution():
     def del_same(self, alist):
         return list(set(alist))
 
