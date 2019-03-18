@@ -27,13 +27,11 @@
 1. [请按alist中元素的age由大到小排序](interview_question/sort_list.py)
 
 1. 下面代码的输出结果将是什么？
-
-  ```python
-  list1 = ['a','b','c','d','e']
-  print(list1[10:])
-  ```
-
-  代码将会输出[]， 不会产生IndexError错误， 就像所期望的那样，尝试用超出成员的个数的index来获取某个列表的成员。例如尝试获取list[10]和之后的成员，会导致IndexError。然而， 尝试获取列表的切片，开始的index超过了成员个数不会产生IndexError， 而是仅仅返回一个空列表。这成为特别让人恶心的疑难杂症， 因为运行的时候没有产生错误，导致BUG很难被追踪到。
+    ```python
+    list1 = ['a','b','c','d','e']
+    print(list1[10:])
+    ```
+    代码将会输出[]， 不会产生IndexError错误， 就像所期望的那样，尝试用超出成员的个数的index来获取某个列表的成员。例如尝试获取list[10]和之后的成员，会导致IndexError。然而， 尝试获取列表的切片，开始的index超过了成员个数不会产生IndexError， 而是仅仅返回一个空列表。这成为特别让人恶心的疑难杂症， 因为运行的时候没有产生错误，导致BUG很难被追踪到。
 
 1. [写一个列表生成式，产生一个公差为11的等差数列](interview_question/gen_list.py)
 
@@ -44,23 +42,18 @@
 ### 企业面试题
 
 1. Python新式类与经典类的区别？  
-
   a. Python里凡是继承了object的类都是新式类  
   b. Python3中只有新式类  
   c. Python2中继承object的类是新式类,没有写父类的是经典类  
   d. 经典类目前在Python中基本没有应用  
 
-2. Python中内置数据结构有几种?
-
+2. Python中内置数据结构有几种?  
   int, str, float, complex, long(Python3中没有, 只有无限精度的int)  
   list, tuple, set, dict  
 
 3. Python中如何实现单例模式? 请写出至少两种实现方法  
-
     第一种方法:[使用装饰器](interview_question/singleton.py)  
-
     第二种方法:[使用基类new](interview_question/singleton.py), 是真正创建实例对象的方法,所以重写基类的new方法,以此保证创建对象的时候只生成一个实例  
-
     ~~第三种方法:[元类](interview_question/singleton.py), 元类是用于创建类对象的类,类对象创建实例对象时一定要调用call方法, 因此在调用call时候始终只创建一个实例即可,type是Python的元类~~
 
 4. [反转一个整数，例如-123 --> -321](interview_question/reverse_int.py)
@@ -73,16 +66,12 @@
 
 8. [字符串的操作题目](interview_question/str_operation.py)
 
-9. 可变类型与比可变类型
-
+9. 可变类型与比可变类型  
   a. 可变类型有list,dict, 不可变类型有tuple, number, string  
-
   b. 当进行修改操作时,可变类型传递的是内存中的地址,也就是说,直接修改内存中的值,并没有开辟新的内存  
-
   c. 不可变类型被修改时,并没有改变原来内存地址中的值,而是开辟一块新的内存,将原来地址中的之复制进去,对这块新开辟的内存中的值进行操作
 
-10. is和==有什么区别?
-
+10. is和==有什么区别?  
   is: 比较的是两个对象的id是否相等,也就是比较两对象是否为同一个实例对象.是否指向同一个内存地址  
   ==: 比较两个对象的内容/值是否相等, 默认会调用对象的eq()方法
 
