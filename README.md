@@ -79,6 +79,10 @@
 
 1. [两个数相加的和等于某个数](leetcode/two_sum.py)
 
+1. [将零放到最后](leetcode/move_zeros.py)
+
+1. [找单个出现的值](leetcode/single_number.py)
+
 ## 参考文章
 
 - [关于python的面试题](https://github.com/Niracler/python-interview-question)  
