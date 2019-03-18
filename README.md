@@ -28,12 +28,12 @@
 
 1. 下面代码的输出结果将是什么？
 
-```python
-list1 = ['a','b','c','d','e']
-print(list1[10:])
-```
+  ```python
+  list1 = ['a','b','c','d','e']
+  print(list1[10:])
+  ```
 
-代码将会输出[]， 不会产生IndexError错误， 就像所期望的那样，尝试用超出成员的个数的index来获取某个列表的成员。例如尝试获取list[10]和之后的成员，会导致IndexError。然而， 尝试获取列表的切片，开始的index超过了成员个数不会产生IndexError， 而是仅仅返回一个空列表。这成为特别让人恶心的疑难杂症， 因为运行的时候没有产生错误，导致BUG很难被追踪到。
+  代码将会输出[]， 不会产生IndexError错误， 就像所期望的那样，尝试用超出成员的个数的index来获取某个列表的成员。例如尝试获取list[10]和之后的成员，会导致IndexError。然而， 尝试获取列表的切片，开始的index超过了成员个数不会产生IndexError， 而是仅仅返回一个空列表。这成为特别让人恶心的疑难杂症， 因为运行的时候没有产生错误，导致BUG很难被追踪到。
 
 1. [写一个列表生成式，产生一个公差为11的等差数列](interview_question/gen_list.py)
 
@@ -66,6 +66,25 @@ print(list1[10:])
 4. [反转一个整数，例如-123 --> -321](interview_question/reverse_int.py)
 
 5. [设计实现遍历目录与子目录，抓取.py文件](interview_question/os_test.py)
+
+6. [一行代码实现1-100之和](interview_question/one_line_add.py)
+
+7. [Python-遍历列表时删除元素的正确做法](interview_question/del_list.py)
+
+8. [字符串的操作题目](interview_question/str_operation.py)
+
+9. 可变类型与比可变类型
+
+  a. 可变类型有list,dict, 不可变类型有tuple, number, string  
+
+  b. 当进行修改操作时,可变类型传递的是内存中的地址,也就是说,直接修改内存中的值,并没有开辟新的内存  
+
+  c. 不可变类型被修改时,并没有改变原来内存地址中的值,而是开辟一块新的内存,将原来地址中的之复制进去,对这块新开辟的内存中的值进行操作
+
+10. is和==有什么区别?
+
+  is: 比较的是两个对象的id是否相等,也就是比较两对象是否为同一个实例对象.是否指向同一个内存地址  
+  ==: 比较两个对象的内容/值是否相等, 默认会调用对象的eq()方法
 
 ### LeetCode热门面试问题
 
