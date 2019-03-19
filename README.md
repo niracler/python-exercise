@@ -83,6 +83,10 @@
 
 1. [找单个出现的值](leetcode/single_number.py)
 
+1. [list的交集](leetcode/intersect.py)
+
+1. [一个存在列表里的数,你将它加1(高精度加法)](leetcode/plus_one.py)
+
 ## 参考文章
 
 - [关于python的面试题](https://github.com/Niracler/python-interview-question)  
