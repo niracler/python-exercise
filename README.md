@@ -78,17 +78,19 @@
 11. [求出列表所有奇数并构造新列表 ](interview_question/odd_number.py)
 
 12. Python中变量的作用域?(变量查找顺序)  
-    函数作用域的LEGB顺序
-    a. 什么是LEGB?
-    L: local函数内部作用域
-    E: enclosing 函数内部与内嵌函数之间
-    G: global全局作用域
-    B: build-in 内置作用域
-    python在函数中的查找分为4种, 称之为LEGB,也正是按照这种顺序来查找的
+    函数作用域的LEGB顺序  
+    a. 什么是LEGB?  
+    L: local函数内部作用域   
+    E: enclosing 函数内部与内嵌函数之间  
+    G: global全局作用域  
+    B: build-in 内置作用域  
+    python在函数中的查找分为4种, 称之为LEGB,也正是按照这种顺序来查找的  
     
 13. 
 
-### LeetCode热门面试问题
+## LeetCode热门面试问题
+
+### Array
 
 1. [两个数相加的和等于某个数](leetcode/two_sum.py)
 
@@ -99,6 +101,14 @@
 1. [list的交集](leetcode/intersect.py)
 
 1. [一个存在列表里的数,你将它加1(高精度加法)](leetcode/plus_one.py)
+
+1. [不新建一个二维列表旋转图片](leetcode/rotate_image.py)
+
+1. [买卖股票的最好时间及最大收益分析](leetcode/max_profit.py)
+
+1. [列表中是否有重复的元素？](leetcode/contains_duplicate.py)
+
+1. [列表挪位](leetcode/rotate_array.py)
 
 ## 参考文章
 
