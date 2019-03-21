@@ -6,7 +6,12 @@
 
 class Solution:
     def sort_dicts(self, dicts: dict):
-        return sorted(dicts.items(), key=lambda x:x[1])
+        """
+        lambda 输入：输出
+        :param dicts:
+        :return:
+        """
+        return sorted(dicts.items(), key=lambda x: x[1])
 
 
 if __name__ == '__main__':

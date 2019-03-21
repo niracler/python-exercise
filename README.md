@@ -86,7 +86,20 @@
     B: build-in 内置作用域  
     python在函数中的查找分为4种, 称之为LEGB,也正是按照这种顺序来查找的  
     
-13. 
+13. [字符串 "123" 转换成 123，不使用内置api，例如 int()](interview_question/atoi.py)
+
+14. [相加值为给定的某个数](interview_question/sum_is_target.py)  
+    给定一个整数数组和一个目标值，找出数组中和为目标值的两个数。你可以假设每个输入只对应一种答案，且同样的元素不能被重复利用。示例:给定nums = [2,7,11,15],target=9 因为 nums[0]+nums[1] = 2+7 =9,所以返回[0,1]
+
+15. [给列表中的字典排序](interview_question/sort_dicts2.py)  
+    假设有如下list对象， ```alist=[{"name":"a","age":20},{"name":"b","age":30},{"name":"c","age":25}]``` ,
+    将alist中的元素按照age从大到小排序 ```alist=[{"name":"a","age":20},{"name":"b","age":30},{"name":"c","age":25}]```
+
+16. [python代码实现删除一个list里面的重复元素](interview_question/dist_func.py)
+
+17. [统计一个文本中单词频次最高的10个单词？](interview_question/highest_frequency.py)
+
+18. []()
 
 ## LeetCode热门面试问题
 
