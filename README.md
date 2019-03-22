@@ -123,6 +123,20 @@
 
 1. [列表挪位](leetcode/rotate_array.py)
 
+1. [请写出一个函数满足以下条件](interview_question/get_even.py)  
+    该函数的输入是一个仅包含数字的list,输出一个新的list，其中每一个元素要满足以下条件：  
+    1、该元素是偶数  
+    2、该元素在原list中是在偶数的位置(index是偶数)  
+
+1. [使用单一的列表生成式来产生一个新的列表](interview_question/gen_list2.py)  
+    该列表只包含满足以下条件的值，元素为原始列表中偶数切片
+
+1. [用一行代码生成[1,4,9,16,25,36,49,64,81,100]](interview_question/gen_list3.py)
+
+1. [输入某年某月某日，判断这一天是这一年的第几天？](interview_question/get_data_in_year.py)
+
+1. [两个有序列表，l1,l2，对这两个列表进行合并不可使用extend](interview_question/merge_list.py)
+
 ### Strings
 
 1. [不用额外的空间翻转字符串](leetcode/reverse_string.py)
