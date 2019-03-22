@@ -123,6 +123,12 @@
 
 1. [列表挪位](leetcode/rotate_array.py)
 
+### Strings
+
+1. [不用额外的空间翻转字符串](leetcode/reverse_string.py)
+
+1. [翻转数字](leetcode/reverse.py)
+
 ## 参考文章
 
 - [关于python的面试题](https://github.com/Niracler/python-interview-question)  
