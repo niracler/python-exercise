@@ -105,23 +105,23 @@
 
 ### Array
 
-1. [两个数相加的和等于某个数](leetcode/two_sum.py)
+1. [两个数相加的和等于某个数](leetcode/array/two_sum.py)
 
-1. [将零放到最后](leetcode/move_zeros.py)
+1. [将零放到最后](leetcode/array/move_zeros.py)
 
-1. [找单个出现的值](leetcode/single_number.py)
+1. [找单个出现的值](leetcode/array/single_number.py)
 
-1. [list的交集](leetcode/intersect.py)
+1. [list的交集](leetcode/array/intersect.py)
 
-1. [一个存在列表里的数,你将它加1(高精度加法)](leetcode/plus_one.py)
+1. [一个存在列表里的数,你将它加1(高精度加法)](leetcode/array/plus_one.py)
 
-1. [不新建一个二维列表旋转图片](leetcode/rotate_image.py)
+1. [不新建一个二维列表旋转图片](leetcode/array/rotate_image.py)
 
-1. [买卖股票的最好时间及最大收益分析](leetcode/max_profit.py)
+1. [买卖股票的最好时间及最大收益分析](leetcode/array/max_profit.py)
 
-1. [列表中是否有重复的元素？](leetcode/contains_duplicate.py)
+1. [列表中是否有重复的元素？](leetcode/array/contains_duplicate.py)
 
-1. [列表挪位](leetcode/rotate_array.py)
+1. [列表挪位](leetcode/array/rotate_array.py)
 
 1. [请写出一个函数满足以下条件](interview_question/get_even.py)  
     该函数的输入是一个仅包含数字的list,输出一个新的list，其中每一个元素要满足以下条件：  
@@ -139,9 +139,17 @@
 
 ### Strings
 
-1. [不用额外的空间翻转字符串](leetcode/reverse_string.py)
+1. [不用额外的空间翻转字符串](leetcode/strings/reverse_string.py)
 
-1. [翻转数字](leetcode/reverse.py)
+1. [翻转数字](leetcode/strings/reverse.py)
+
+1. [自己实现strStr()找子串](leetcode/strings/my_strstr.py)
+
+1. [报数](leetcode/strings/count_and_say.py)
+
+1. [不一样的自己写的atoi()](leetcode/strings/my_atoi.py)
+
+1. [找英文回文](leetcode/strings/valid_palindrome.py)
 
 ## 参考文章
 
