@@ -99,7 +99,20 @@
 
 17. [统计一个文本中单词频次最高的10个单词？](interview_question/highest_frequency.py)
 
-18. []()
+1. [请写出一个函数满足以下条件](interview_question/get_even.py)  
+    该函数的输入是一个仅包含数字的list,输出一个新的list，其中每一个元素要满足以下条件：  
+    1、该元素是偶数  
+    2、该元素在原list中是在偶数的位置(index是偶数)  
+
+1. [使用单一的列表生成式来产生一个新的列表](interview_question/gen_list2.py)  
+    该列表只包含满足以下条件的值，元素为原始列表中偶数切片
+
+1. [用一行代码生成[1,4,9,16,25,36,49,64,81,100]](interview_question/gen_list3.py)
+
+1. [输入某年某月某日，判断这一天是这一年的第几天？](interview_question/get_data_in_year.py)
+
+1. [两个有序列表，l1,l2，对这两个列表进行合并不可使用extend](interview_question/merge_list.py)
+
 
 ## LeetCode热门面试问题
 
@@ -123,19 +136,6 @@
 
 1. [列表挪位](leetcode/array/rotate_array.py)
 
-1. [请写出一个函数满足以下条件](interview_question/get_even.py)  
-    该函数的输入是一个仅包含数字的list,输出一个新的list，其中每一个元素要满足以下条件：  
-    1、该元素是偶数  
-    2、该元素在原list中是在偶数的位置(index是偶数)  
-
-1. [使用单一的列表生成式来产生一个新的列表](interview_question/gen_list2.py)  
-    该列表只包含满足以下条件的值，元素为原始列表中偶数切片
-
-1. [用一行代码生成[1,4,9,16,25,36,49,64,81,100]](interview_question/gen_list3.py)
-
-1. [输入某年某月某日，判断这一天是这一年的第几天？](interview_question/get_data_in_year.py)
-
-1. [两个有序列表，l1,l2，对这两个列表进行合并不可使用extend](interview_question/merge_list.py)
 
 ### Strings
 
@@ -150,6 +150,10 @@
 1. [不一样的自己写的atoi()](leetcode/strings/my_atoi.py)
 
 1. [找英文回文](leetcode/strings/valid_palindrome.py)
+
+1. [找字符串中第一个不重复的字母](leetcode/strings/first_uniq_char.py)
+
+1. [判断是不是用同样的字母构成的单词](leetcode/strings/valid_anagram.py)
 
 ## 参考文章
 
