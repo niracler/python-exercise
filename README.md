@@ -128,10 +128,17 @@
 
 1. [统计一段字符串中字符出现的次数](interview_question/count_str.py)
 
-
 1. super函数的具体用法和场景
+   [使用super调用父类方法](https://python3-cookbook.readthedocs.io/zh_CN/latest/c08/p07_calling_method_on_parent_class.html)
 
+## Python高级
 
+### 元类
+
+1. Python中类方法、类实例方法、静态方法有何区别？  
+    - 类方法：是类对象的方法，在定义时需要在上方使用@classmethod进行装饰，形参为cls，表示类对象，类对象和实例对象都可调用
+    - 类实例方法：是实例化对象的方法，只有实例对象可以调用，形参为self，指代对象本身
+    - 静态方法：是一个任意函数，在其上方使用@staticmethod进行装饰，可以用对象直接调用，静态方法实际上跟该类没有太大关系
 
 ## LeetCode热门面试问题
 
