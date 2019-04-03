@@ -113,6 +113,25 @@
 
 1. [两个有序列表，l1,l2，对这两个列表进行合并不可使用extend](interview_question/merge_list.py)
 
+1. [给定一个任意长度数组，实现一个函数](interview_question/up_stream.py)  
+    让所有奇数都在偶数前面，而且奇数升序排列，偶数降序排序，如字符串'1982376455',变成'1355798642'
+
+1. [写一个函数找出一个整数数组中，第二大的数](interview_question/get_second_big.py)
+
+1. 阅读一下代码他们的输出结果是什么？
+
+    ```python
+    def multi():
+        return [lambda x : i*x for i in range(4)]
+    print([m(3) for m in multi()])
+    ```
+
+1. [统计一段字符串中字符出现的次数](interview_question/count_str.py)
+
+
+1. super函数的具体用法和场景
+
+
 
 ## LeetCode热门面试问题
 
@@ -154,6 +173,18 @@
 1. [找字符串中第一个不重复的字母](leetcode/strings/first_uniq_char.py)
 
 1. [判断是不是用同样的字母构成的单词](leetcode/strings/valid_anagram.py)
+
+### Linked List
+
+1. [删除链表中的当前节点的元素](leetcode/linked_list/delete_node.py)
+
+1. [删除链表中倒数第N个节点](leetcode/linked_list/remove_eth_from_end.py)
+
+1. [有序链表合并](leetcode/linked_list/merge_two_lists.py)
+
+1. [链表倒序](leetcode/linked_list/reverse_list.py)
+
+###
 
 ## 参考文章
 
