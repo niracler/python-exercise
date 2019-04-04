@@ -191,6 +191,8 @@
 
 1. [链表倒序](leetcode/linked_list/reverse_list.py)
 
+1. [判断是否是回文链表](leetcode/linked_list/is_palindrome.py)
+
 ###
 
 ## 参考文章
