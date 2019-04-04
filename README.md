@@ -140,6 +140,35 @@
     - 类实例方法：是实例化对象的方法，只有实例对象可以调用，形参为self，指代对象本身
     - 静态方法：是一个任意函数，在其上方使用@staticmethod进行装饰，可以用对象直接调用，静态方法实际上跟该类没有太大关系
 
+1. 遍历一个object的所有属性，并print每一个属性名？
+    ```python
+    class Car:
+    def __init__(self,name,loss): # loss [价格，油耗，公里数]
+        self.name = name
+        self.loss = loss
+    
+    def getName(self):
+        return self.name
+    
+    def getPrice(self):
+        # 获取汽车价格
+        return self.loss[0]
+    
+    def getLoss(self):
+        # 获取汽车损耗值
+        return self.loss[1] * self.loss[2]
+
+    Bmw = Car("宝马",[60,9,500]) # 实例化一个宝马车对象
+    print(getattr(Bmw,"name")) # 使用getattr()传入对象名字,属性值。
+    print(dir(Bmw)) # 获Bmw所有的属性和方法
+    ```
+    输出
+    ```python
+    宝马
+    ['__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', 'getLoss', 'getName', 'getPrice', 'loss', 'name']
+    ```
+
+
 ## LeetCode热门面试问题
 
 ### Array
