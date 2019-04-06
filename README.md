@@ -222,7 +222,13 @@
 
 1. [判断是否是回文链表](leetcode/linked_list/is_palindrome.py)
 
-###
+### Sorting and Searching
+
+1. [合并有序列表](leetcode/sorting_and_searching/merge.py)
+
+### Math
+
+1. [3的次方](leetcode/math/is_power_of_three.py)
 
 ## 参考文章
 
