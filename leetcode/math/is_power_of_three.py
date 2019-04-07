@@ -30,11 +30,13 @@ class Solution(object):
         :rtype: bool
         """
 
-        while n > 1:
-            n /= 3
-            if n == 1:
-                return True
-        return False
+        while n > 1 and n % 3 == 0:
+            n //= 3
+
+        if n == 1:
+            return True
+        else:
+            return False
 
 
 if __name__ == '__main__':
