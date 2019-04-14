@@ -224,7 +224,29 @@
     - 在抽象类中可以写非抽象的方法，从而避免在子类中重复书写他们，这样可以提高代码的复用性，这是抽象类的优势；接口中只能有抽象的方法
     - 一个类只能继承一个直接父类，这个父类可以是具体的类也可以是抽象类；但一个类可以实现多个接口
      
+1. Python中如何动态获取和设置对象的属性？  
 
+    如果要获取一个对象的所有属性和方法，可以使用dir()函数，它返回一个包含字符串的list，比如，获得一个str对象的所有属性和方法
+    ```shell
+    >>> dir('ABC')
+    ['__add__', '__class__', '__contains__', '__delattr__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__getnewargs__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mod__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__rmod__', '__rmul__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', 'capitalize', 'casefold', 'center', 'count', 'encode', 'endswith', 'expandtabs', 'find', 'format', 'format_map', 'index', 'isalnum', 'isalpha', 'isascii', 'isdecimal', 'isdigit', 'isidentifier', 'islower', 'isnumeric', 'isprintable', 'isspace', 'istitle', 'isupper', 'join', 'ljust', 'lower', 'lstrip', 'maketrans', 'partition', 'replace', 'rfind', 'rindex', 'rjust', 'rpartition', 'rsplit', 'rstrip', 'split', 'splitlines', 'startswith', 'strip', 'swapcase', 'title', 'translate', 'upper', 'zfill']
+    ```
+    
+### 内存管理与垃圾回收机制
+
+1. 哪些操作会导致Python内存溢出，怎么处理？  
+    内存泄露的原因主要有三种：
+    - 所用到的C语言开发的底层模块中出现了内存泄露
+    - 代码中用到了全局的list、dict或其他容器，不停地网这些容器中插入对象，而忘记在使用完之后进行删除回收
+    - 代码中有“引用循环”，python垃圾处理机制无法进行回收
+    
+    [Python内存泄露调试指导思想](https://jackywu.github.io/articles/python%E5%86%85%E5%AD%98%E6%B3%84%E9%9C%B2%E8%B0%83%E8%AF%95%E6%8C%87%E5%AF%BC%E6%80%9D%E6%83%B3/)
+     
+2. 关于Python内存管理，下列说法错误的是  
+    - 变量不必事先声明
+    - 变量无需先创建和赋值而直接使用（错误）
+    - 变量无需指定类型
+    - 可以使用del释放资源
 
 
 ## LeetCode热门面试问题
@@ -289,6 +311,12 @@
 1. [3的次方](leetcode/math/is_power_of_three.py)
 
 1. [三和五的倍数](leetcode/math/fizz_buzz.py)
+
+### Other
+
+1. [将一个整数转换为二进制并计算里面有多少个1](leetcode/other/hamming_weight.py)
+
+1. [将两个整数转换为二进制并计算有多少位不一样](leetcode/other/hamming_distance.py)
 
 ## 参考文章
 
