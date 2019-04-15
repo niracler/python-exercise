@@ -341,6 +341,8 @@
 
 1. [将两个整数转换为二进制并计算有多少位不一样](leetcode/other/hamming_distance.py)
 
+1. [杨辉三角](leetcode/other/pascal_triangle.py)
+
 ## 参考文章
 
 - [关于python的面试题](https://github.com/Niracler/python-interview-question)  
