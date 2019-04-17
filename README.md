@@ -272,6 +272,10 @@
 
 可以通过sys.getrefcount(obj)来获取对象的引用计数，并根据返回值是否为0来判断是否内存泄露
 
+## 函数
+
+### Python常见的列表推导式
+
 ## LeetCode热门面试问题
 
 ### Array
@@ -342,6 +346,10 @@
 1. [将两个整数转换为二进制并计算有多少位不一样](leetcode/other/hamming_distance.py)
 
 1. [杨辉三角](leetcode/other/pascal_triangle.py)
+
+1. [括号匹配](leetcode/other/valid_parentheses.py)
+
+1. [将一个整数转换为二进制数并逆序](leetcode/other/reverse_bits.py)
 
 ## 参考文章
 
