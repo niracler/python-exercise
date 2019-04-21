@@ -140,7 +140,7 @@
     - 类实例方法：是实例化对象的方法，只有实例对象可以调用，形参为self，指代对象本身
     - 静态方法：是一个任意函数，在其上方使用@staticmethod进行装饰，可以用对象直接调用，静态方法实际上跟该类没有太大关系
 
-1. 遍历一个object的所有属性，并print每一个属性名？
+2. 遍历一个object的所有属性，并print每一个属性名？
     ```python
     class Car:
         def __init__(self,name,loss): # loss [价格，油耗，公里数]
@@ -168,7 +168,7 @@
     ['__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', 'getLoss', 'getName', 'getPrice', 'loss', 'name']
     ```
 
-1. 写一个类，并让它尽可能多的支持操作符?
+3. 写一个类，并让它尽可能多的支持操作符?
     ```python
     class Array:
         __list = []
@@ -200,7 +200,7 @@
                 print (item)
     ```
     
-1. 介绍Cython，Pypy Cpython Numba各有什么缺点  
+4. 介绍Cython，Pypy Cpython Numba各有什么缺点  
     **Cython:** Cython是让Python脚本支持C语言扩展的编辑器，Cython能够将Python+C混合编码的.pyx脚本转换为C代码,主要用于优化Python脚本性能或Python调用C函数库  
     
     **Pypy:** Pypy最重要的一点就是Pypy集成了JIT。同时针对CPython的缺点进行了各方面的改良，性能得到了很大的提升。了解JIT技术的人都应该对Pypy很有好感。Pypy的有点是对纯Python项目兼容性极好，几乎可以直接运行并直接获得性能提升(官方宣称的6.3倍，但实际上没感觉有这么多)；缺点就是对很多C语言库支持性不好，Pypy社区一直有相关讨论   
@@ -213,7 +213,7 @@
     
     易用性：易用性最好的无疑是Pypy，Pypy是Python的解释器，我们针对纯Python使用Pypy，除了Pypy不支持的部分库外，不需要进行任何改动。然后是Numba，Numba的基本使用方法就是给函数加一个装饰器，易用性也很高，最后是Cython，因为Cython中需要使用Python+C混合编码，如果需要移植，代价会很大。总结：Pypy是非常理想的Python解释器，最大的瑕疵就是对部分库的兼容问题。Cython是一种Python + C的便利性组合，转为C编译的扩展执行效率非常高，但使用相对麻烦，移植CPython项目代价较高。Numba更适合针对性优化，效率高，并且不会大幅度的改变普通的Python代码。所以三者实在没法说谁最优秀，只是在不同的方向针对性及适用性更高。  
 
-1. 请描述抽象类与接口类的区别和联系？  
+5. 请描述抽象类与接口类的区别和联系？  
 
     共同点： 
     - 都是上层的抽象层
@@ -224,7 +224,7 @@
     - 在抽象类中可以写非抽象的方法，从而避免在子类中重复书写他们，这样可以提高代码的复用性，这是抽象类的优势；接口中只能有抽象的方法
     - 一个类只能继承一个直接父类，这个父类可以是具体的类也可以是抽象类；但一个类可以实现多个接口
      
-1. Python中如何动态获取和设置对象的属性？  
+6. Python中如何动态获取和设置对象的属性？  
 
     如果要获取一个对象的所有属性和方法，可以使用dir()函数，它返回一个包含字符串的list，比如，获得一个str对象的所有属性和方法
     ```shell
@@ -275,6 +275,7 @@
 ## 函数
 
 ### Python常见的列表推导式
+
 [表达式 for 变量 in 列表] 或 [表达式 for 变量 in 列表 if 条件] 
 
 ### 简述read、readline、readlines的区别？
@@ -287,27 +288,48 @@
 
 散列函数（英文：Hash function）又称散列算法、哈希函数，是一种从任何一种数据中创建小的数字“指纹”的方法。散列函数把消息或数据压缩成摘要，使得数据变小，将数据格式固定下来。该函数将数据打乱混合，重新创建一个叫做散列值的指纹。散列值通常用一个短的随机字母和数字组成的字符串来表达
 
+### Python函数重载机制？
+
+函数重载主要是为了解决两个问题：
+
+1. 可变参数类型
+2. 可变参数个数
+
+另外， 一个基本的设计原则是，仅仅当两个函数除了参数个数可以不同外，其功能是完全相同的，此时才使用函数重载，如果两个函数的功能其实不同，那么不应当使用重载，而应当使用一个名字不同的函数。
+
+对于情况1，函数功能相同，但参数类型不同，Python如何处理？答案是根本不需要处理，因为Python可以接受任何类型的参数，如果函数的功能相同，那么不同的参数类型在Python中很可能是相同的代码，没有必要做成两个不同函数。
+
+对于情况2， 函数功能相同，但参数类型不同，Python如何处理？大家知道，答案就是缺省参数。对那些缺少的参数设定为缺省参数即可解决问题。因为你假设函数功能相同，那么缺少的参数终归是需要用到的。
+
+鉴于情况1跟情况2都有了解决方案，Python自然就不需要函数重载了。
+
+### [写一个函数找出一个整数数组中，第二大的数](interview_question/function/second_large.py)
+
+### [手写一个判断时间的装饰器](interview_question/function/timecheck.py)
+
+
+
 ## LeetCode热门面试问题
 
 ### Array
 
 1. [两个数相加的和等于某个数](leetcode/array/two_sum.py)
 
-1. [将零放到最后](leetcode/array/move_zeros.py)
+2. [将零放到最后](leetcode/array/move_zeros.py)
 
-1. [找单个出现的值](leetcode/array/single_number.py)
+3. [找单个出现的值](leetcode/array/single_number.py)
 
-1. [list的交集](leetcode/array/intersect.py)
+4. [list的交集](leetcode/array/intersect.py)
 
-1. [一个存在列表里的数,你将它加1(高精度加法)](leetcode/array/plus_one.py)
+5. [一个存在列表里的数,你将它加1(高精度加法)](leetcode/array/plus_one.py)
 
-1. [不新建一个二维列表旋转图片](leetcode/array/rotate_image.py)
+6. [不新建一个二维列表旋转图片](leetcode/array/rotate_image.py)
 
-1. [买卖股票的最好时间及最大收益分析](leetcode/array/max_profit.py)
+7. [买卖股票的最好时间及最大收益分析](leetcode/array/max_profit.py)
 
-1. [列表中是否有重复的元素？](leetcode/array/contains_duplicate.py)
+8. [列表中是否有重复的元素？](leetcode/array/contains_duplicate.py)
 
-1. [列表挪位](leetcode/array/rotate_array.py)
+9. [列表挪位](leetcode/array/rotate_array.py)
 
 
 ### Strings
@@ -353,14 +375,13 @@
 ### Other
 
 1. [将一个整数转换为二进制并计算里面有多少个1](leetcode/other/hamming_weight.py)
-
 1. [将两个整数转换为二进制并计算有多少位不一样](leetcode/other/hamming_distance.py)
-
 1. [杨辉三角](leetcode/other/pascal_triangle.py)
-
 1. [括号匹配](leetcode/other/valid_parentheses.py)
-
 1. [将一个整数转换为二进制数并逆序](leetcode/other/reverse_bits.py)
+1. [找到丢失的数](leetcode/other/missing_number.py)  
+1. [罗马数字转换](leetcode/other/roman_to_integer.py)
+1. [寻找n以下的质数](leetcode/math/count_primes.py)
 
 ## 参考文章
 
