@@ -27,17 +27,19 @@
 1. [请按alist中元素的age由大到小排序](interview_question/sort_list.py)
 
 1. 下面代码的输出结果将是什么？
+
     ```python
     list1 = ['a','b','c','d','e']
     print(list1[10:])
     ```
+
     代码将会输出[]， 不会产生IndexError错误， 就像所期望的那样，尝试用超出成员的个数的index来获取某个列表的成员。例如尝试获取list[10]和之后的成员，会导致IndexError。然而， 尝试获取列表的切片，开始的index超过了成员个数不会产生IndexError， 而是仅仅返回一个空列表。这成为特别让人恶心的疑难杂症， 因为运行的时候没有产生错误，导致BUG很难被追踪到。
 
 1. [写一个列表生成式，产生一个公差为11的等差数列](interview_question/gen_list.py)
 
 1. [给定两个列表，怎么找出他们相同的元素和不同的元素？(集合)](interview_question/different_list.py)
 
-1. [请写出一段python代码实现删除list里面的重复元素？](interview_question/dif_sim.py)
+1. [请写出一段 python 代码实现删除 list 里面的重复元素？](interview_question/dif_sim.py)
 
 ### 企业面试题
 
@@ -54,7 +56,7 @@
 3. Python中如何实现单例模式? 请写出至少两种实现方法  
     第一种方法:[使用装饰器](interview_question/singleton.py)  
     第二种方法:[使用基类new](interview_question/singleton.py), 是真正创建实例对象的方法,所以重写基类的new方法,以此保证创建对象的时候只生成一个实例  
-    ~~第三种方法:[元类](interview_question/singleton.py), 元类是用于创建类对象的类,类对象创建实例对象时一定要调用call方法, 因此在调用call时候始终只创建一个实例即可,type是Python的元类~~
+    ~~第三种方法:[元类](interview_question/singleton.py), 元类是用于创建类对象的类,类对象创建实例对象时一定要调用call方法, 因此在调用call时候始终只创建一个实例即可,type 是Python 的元类~~
 
 4. [反转一个整数，例如-123 --> -321](interview_question/reverse_int.py)
 
@@ -75,12 +77,12 @@
   is: 比较的是两个对象的id是否相等,也就是比较两对象是否为同一个实例对象.是否指向同一个内存地址  
   ==: 比较两个对象的内容/值是否相等, 默认会调用对象的eq()方法
   
-11. [求出列表所有奇数并构造新列表 ](interview_question/odd_number.py)
+11. [求出列表所有奇数并构造新列表](interview_question/odd_number.py)
 
 12. Python中变量的作用域?(变量查找顺序)  
     函数作用域的LEGB顺序  
     a. 什么是LEGB?  
-    L: local函数内部作用域   
+    L: local函数内部作用域  
     E: enclosing 函数内部与内嵌函数之间  
     G: global全局作用域  
     B: build-in 内置作用域  
@@ -223,15 +225,16 @@
     区别：
     - 在抽象类中可以写非抽象的方法，从而避免在子类中重复书写他们，这样可以提高代码的复用性，这是抽象类的优势；接口中只能有抽象的方法
     - 一个类只能继承一个直接父类，这个父类可以是具体的类也可以是抽象类；但一个类可以实现多个接口
-     
+
 6. Python中如何动态获取和设置对象的属性？  
 
     如果要获取一个对象的所有属性和方法，可以使用dir()函数，它返回一个包含字符串的list，比如，获得一个str对象的所有属性和方法
+
     ```shell
     >>> dir('ABC')
     ['__add__', '__class__', '__contains__', '__delattr__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__getnewargs__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mod__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__rmod__', '__rmul__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', 'capitalize', 'casefold', 'center', 'count', 'encode', 'endswith', 'expandtabs', 'find', 'format', 'format_map', 'index', 'isalnum', 'isalpha', 'isascii', 'isdecimal', 'isdigit', 'isidentifier', 'islower', 'isnumeric', 'isprintable', 'isspace', 'istitle', 'isupper', 'join', 'ljust', 'lower', 'lstrip', 'maketrans', 'partition', 'replace', 'rfind', 'rindex', 'rjust', 'rpartition', 'rsplit', 'rstrip', 'split', 'splitlines', 'startswith', 'strip', 'swapcase', 'title', 'translate', 'upper', 'zfill']
     ```
-    
+
 ### 内存管理与垃圾回收机制
 
 1. 哪些操作会导致Python内存溢出，怎么处理？  
@@ -239,25 +242,26 @@
     - 所用到的C语言开发的底层模块中出现了内存泄露
     - 代码中用到了全局的list、dict或其他容器，不停地网这些容器中插入对象，而忘记在使用完之后进行删除回收
     - 代码中有“引用循环”，python垃圾处理机制无法进行回收
-    
+
     [Python内存泄露调试指导思想](https://jackywu.github.io/articles/python%E5%86%85%E5%AD%98%E6%B3%84%E9%9C%B2%E8%B0%83%E8%AF%95%E6%8C%87%E5%AF%BC%E6%80%9D%E6%83%B3/)
-     
+
 2. 关于Python内存管理，下列说法错误的是  
     - 变量不必事先声明
     - 变量无需先创建和赋值而直接使用（错误）
     - 变量无需指定类型
     - 可以使用del释放资源
-    
+
 ### Python的内存管理机制及调优手段？
 
 内存管理机制：引用计数、垃圾回收、内存池
 
 - 引用计数：引用计数是一种非常高效的内存管理手段，当一个Python对象被引用时其引用计数增加1，当其不再被一个变量引用时则计数减1，当引用计数等于0时对象被删除。弱引用不会增加引用计数
 - 垃圾回收：
-    - 引用计数是一种垃圾收集机制，而且也是一种最直观、最简单的垃圾收集技术。当Python的某个对象的引用技术将为0时，说明没有任何引用指向该对象，该对象就成为要被回收的垃圾了。比如某个新建对象，它被分配给某个引用，对象的引用计数变为1，如果引用被删除，对象的引用计数为0，那么该对象就可以被垃圾回收。不过出现循环引用的话，引用计数机制就不再起有效的作用了。
-    - [标记清除](https://foofish.net/python-gc.html)
+  - 引用计数是一种垃圾收集机制，而且也是一种最直观、最简单的垃圾收集技术。当Python的某个对象的引用技术将为0时，说明没有任何引用指向该对象，该对象就成为要被回收的垃圾了。比如某个新建对象，它被分配给某个引用，对象的引用计数变为1，如果引用被删除，对象的引用计数为0，那么该对象就可以被垃圾回收。不过出现循环引用的话，引用计数机制就不再起有效的作用了。
+  - [标记清除](https://foofish.net/python-gc.html)
 
 调优手段：
+
 - 手动垃圾回收
 - 调高垃圾回收阈值
 - 避免循环引用
@@ -307,7 +311,21 @@
 
 ### [手写一个判断时间的装饰器](interview_question/function/timecheck.py)
 
+### [使用Python内置的filter()方法来过滤?](inter_question/function/test_filter.py)
 
+```Python
+list(filter(lambda x: x % 2 == 0, range(10)))
+```
+
+### 编写函数的四个原则
+
+1. 函数设计要尽量短小
+
+2. 函数声明要做到合理、简单、易于使用
+
+3. 函数参数设计应该考虑向下兼容
+
+4. 一个函数只做一件事情， 尽量保证函数语句粒度的一致性
 
 ## LeetCode热门面试问题
 
@@ -330,7 +348,6 @@
 8. [列表中是否有重复的元素？](leetcode/array/contains_duplicate.py)
 
 9. [列表挪位](leetcode/array/rotate_array.py)
-
 
 ### Strings
 
@@ -375,13 +392,26 @@
 ### Other
 
 1. [将一个整数转换为二进制并计算里面有多少个1](leetcode/other/hamming_weight.py)
+
 1. [将两个整数转换为二进制并计算有多少位不一样](leetcode/other/hamming_distance.py)
+
 1. [杨辉三角](leetcode/other/pascal_triangle.py)
+
 1. [括号匹配](leetcode/other/valid_parentheses.py)
+
 1. [将一个整数转换为二进制数并逆序](leetcode/other/reverse_bits.py)
+
 1. [找到丢失的数](leetcode/other/missing_number.py)  
+
 1. [罗马数字转换](leetcode/other/roman_to_integer.py)
+
 1. [寻找n以下的质数](leetcode/math/count_primes.py)
+
+### Dynamic Programming
+
+1. [爬楼梯](leetcode/dynamic_programming/climb_stairs.py)
+
+2. [合适的买卖时间](leetcode/dynamic_programming/max_profit.py)
 
 ## 参考文章
 
