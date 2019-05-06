@@ -87,7 +87,7 @@
     G: global全局作用域  
     B: build-in 内置作用域  
     python在函数中的查找分为4种, 称之为LEGB,也正是按照这种顺序来查找的  
-    
+
 13. [字符串 "123" 转换成 123，不使用内置api，例如 int()](interview_question/atoi.py)
 
 14. [相加值为给定的某个数](interview_question/sum_is_target.py)  
@@ -326,6 +326,93 @@ list(filter(lambda x: x % 2 == 0, range(10)))
 3. 函数参数设计应该考虑向下兼容
 
 4. 一个函数只做一件事情， 尽量保证函数语句粒度的一致性
+
+### 函数调用参数的传递方式是传值还是引用传递？
+
+**Python的参数传递有：** 位置参数、默认参数、可变参数、关键字参数
+
+函数的传值到底是值传递还是引用传递，要分情况：
+
+**不可变参数用值传递：** 像整数和字符串这样的不可变对象，是通过拷贝进行传递的，因为你无论如何都不可能在原处改变不可变对象。
+
+**可变参数是引用传递：** 比如像字典、列表这样的对象是通过引用传递，和C语言里面的用指针传递数组很相似，可变对象能在函数内部改变。
+
+### 如何在function里面设置一个全局变量？
+
+```python
+globals()  # 返回当前作用域全局变量的字典
+global var # 设置使用全局变量
+```
+
+### 对缺省参数的理解？
+
+缺省参数指在调用函数的时候没有传入参数的情况下，调用默认的参数，在调用函数的同事进行赋值，所传入的参数会替代默认参数
+
+*args 是不定长参数， 它可以表示输入
+
+**kwarge 是关键字参数， 赋值时可以使以键值对的方式， 参数可以是任意多对在定义函数的时候不确定会有多少参数会传入时，就可以使用两个参数
+
+### MySQL怎么限制IP访问？
+
+授权所有数据库的所有表的所有权限给ip为任意值用户名为test密码为pwd的用户
+
+```mysql
+GRANT ALL ON *.* TO 'test'@'%' IDENTIFIED BY 'pwd';
+```
+
+授权mydb数据库的所有表的增删改查权限给ip为1.1.1.1用户名为test密码为pwd的用户
+
+```sql
+GRANT SELECT,INSERT,UPDATE,DELETE ON mydb.* TO 'test'@'1.1.1.1' IDENTIFIED BY 'pwd';
+```
+
+授权mydb数据库的stu表的修改权限给ip为1.1.1.1用户名为test密码为pwd的用户
+
+```sql
+GRANT UPDATE(name,age) ON mydb.stu TO 'test'@'1.1.1.1' IDENTIFIED BY 'pwd';
+```
+
+### 带参数的装饰器？
+
+带定长参数的装饰器
+
+```python
+def new_func(func):
+    def wrappedfun(username, passwd):
+        if username == 'root' and passwd == '123456789':
+            print('通过认证')
+            print('开始执行附加功能')
+            return func()
+       	else:
+            print('用户名或密码错误')
+            return
+    return wrappedfun
+
+@new_func
+def origin():
+    print('开始执行函数')
+origin('root','123456789')
+```
+
+带不定长参数的装饰器
+
+```python
+def new_func(func):
+    def wrappedfun(*parts):
+        if parts:
+            counts = len(parts)
+            print('本系统包含 ', end='')
+            for part in parts:
+                print(part, ' ',end='')
+            print('等', counts, '部分')
+            return func()
+        else:
+            print('用户名或密码错误')
+            return func()
+   return wrappedfun
+```
+
+### 
 
 ## LeetCode热门面试问题
 
