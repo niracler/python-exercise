@@ -523,6 +523,10 @@ a, b = b, a
 
 2. [合适的买卖时间](leetcode/dynamic_programming/max_profit.py)
 
+3. [数组中的最大和子数组](leetcode/dynamic_programming/max_sub_array.py)
+
+4. [](leetcode/dynamic_programming/rob.py)
+
 ## 参考文章
 
 - [关于python的面试题](https://github.com/Niracler/python-interview-question)  
