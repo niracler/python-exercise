@@ -525,7 +525,11 @@ a, b = b, a
 
 3. [数组中的最大和子数组](leetcode/dynamic_programming/max_sub_array.py)
 
-4. [](leetcode/dynamic_programming/rob.py)
+4. [做一个英明的盗贼](leetcode/dynamic_programming/rob.py)
+
+### Trees
+
+1. [获取二叉树的深度](leetcode/trees/max_depth.py)
 
 ## 参考文章
 
