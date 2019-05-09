@@ -531,6 +531,8 @@ a, b = b, a
 
 1. [获取二叉树的深度](leetcode/trees/max_depth.py)
 
+2. [二叉树的层序遍历](leetcode/trees/level_order.py)
+
 ## 参考文章
 
 - [关于python的面试题](https://github.com/Niracler/python-interview-question)  
