@@ -533,6 +533,10 @@ a, b = b, a
 
 2. [二叉树的层序遍历](leetcode/trees/level_order.py)
 
+3. [判断一棵树是否是二分查找树](leetcode/trees/is_valid_bst.py)
+
+4. [判断一棵树是否左右对称](leetcode/trees/is_symmetric.py)
+
 ## 参考文章
 
 - [关于python的面试题](https://github.com/Niracler/python-interview-question)  
