@@ -437,6 +437,122 @@ a = 15
 a, b = b, a
 ```
 
+### map 函数和 reduce 函数
+
+```python
+map(lambda x: x * x, [1, 2, 3, 4])
+# [1, 4, 9, 16]
+reduce(lambda x, y: x * y, [1, 2, 3, 4]) # 相当于 ((1 * 2) * 3) * 4 
+# 24
+```
+
+### 回调函数是如何通信的？
+
+回调函数是将指针（地址）作为参数传递给另一个函数， 将整个函数当做一个对象， 赋值给调用的函数
+
+### Python主要的内置数据类型有哪些？ print(dir'a')的输出？
+
+内建类型：布尔类型、数字、字符串、列表、元组、字典、集合
+输出字符串'a'的内建方法
+
+### map(lambda x: x*x , [y for y in range(3)])的输出？
+
+[y for y in range(3)] > [0, 1, 2]
+
+map(lambda x: x*x ,[0, 1, 2]) > [0, 1, 4]
+
+### hasattr(), getattr(), setattr() 函数使用详解？
+
+**hasattr(object, name)函数**
+
+判断一个对象里面是否有 name 属性或者 name 方法， 返回 bool 值， 有 name 属性（方法）返回True， 否则返回 False
+
+```python
+class FunctionDemo(object):
+    name = "demo"
+    def run(self):
+        return "Hello World"
+
+function_demo = FunctionDemo()
+res1 = hasattr(function_demo, "name") # 判断对象是否有name属性，True
+res2 = hasattr(function_demo, "run") # 判断对象是否有run方法，True
+res3 = hasattr(function_demo, "age") # 判断对象是否有age属性，False
+print(res1)
+print(res2)
+print(res3)
+```
+
+**getattr(object, name[,default])函数：**
+
+获取对象object的属性或者方法，如果存在则打印出来，如果不存在，打印默认值，默认值可选。注意：如果返回的是对象的方法，则打印结果是：方法的内存地址，如果需要运行这个方法，可以在后面添加括号().
+
+```python
+functiondemo = function_demo()
+getattr(functiondemo, "name")# 获取name属性，存在就打印出来 --- demo
+getattr(functiondemo, "run") # 获取run 方法，存在打印出方法的内存地址
+getattr(functiondemo, "age") # 获取不存在的属性，报错
+getattr(functiondemo, "age", 18)# 获取不存在的属性，返回一个默认值
+```
+
+**setattr(object, name, values)函数：**
+
+给对象的属性赋值，若属性不存在，先创建再赋值
+
+```python
+class function_demo(object):
+    name = "demo"
+    def run(self):
+        return "hello function"
+functiondemo = function_demo()
+res = hasattr(functiondemo, "age") # 判断age属性是否存在，False
+print(res)
+setattr(functiondemo, "age", 18) # 对age属性进行赋值，无返回值
+res1 = hasattr(functiondemo, "age") # 再次判断属性是否存在，True
+```
+
+**综合使用**
+
+```python
+class function_demo(object):
+    name = "demo"
+    def run(self):
+        return "hello function"
+functiondemo = function_demo()
+res = hasattr(functiondemo, "addr") # 先判断是否存在
+if res:
+    addr = getattr(functiondemo, "addr")
+    print(addr)
+else:
+    addr = getattr(functiondemo, "addr", setattr(functiondemo, "addr", "北京首都"))
+    print(addr)
+```
+
+### 一句话解决阶乘问题
+
+```python
+reduce(lambda x, y : x * y, range(1, n + 1))
+```
+
+### 什么是 lambda 函数？ 有什么好处？
+
+lambda 函数是一个可以接收任意多个参数（包括可选参数）并且返回单个表达式值的函数
+
+1. lambda 函数比较轻便， 即用即扔， 很适合需要完成一项功能， 但是此功能只能在此一处使用， 连名字都很随意的情况下
+
+2. 匿名函数， 一般用来给 filter， map 这样的函数式编程服务
+
+3. 作为回调函数， 传递给某些应用， 比如消息处理
+
+### 递归函数停止的条件
+
+递归终止条件一般定义在递归函数内部， 在递归调用前要做一个条件判断， 根据判断的结果选择是继续调用自身，韩式return， 返回终止递归
+
+终止的条件：
+
+1. 判断递归的次数是否达到某一限定值
+
+2. 判断运算的结果是否达到某个范围等, 根据设计的目的来选择
+
 ## LeetCode热门面试问题
 
 ### Array
