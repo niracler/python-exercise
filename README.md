@@ -605,6 +605,14 @@ lambda 函数是一个可以接收任意多个参数（包括可选参数）并�
 
 1. [判断是否是回文链表](leetcode/linked_list/is_palindrome.py)
 
+1. [链表中相邻两项交换位置](leetcode/linked_list/swap_nodes_in_pairs.py)
+
+1. [](leetcode/linked_list/link_list_cycle.py)
+
+1. [](leetcode/linked_list/link_list_cycle_2.py)
+
+1. [](leetcode/linked_list/reverse_nodes_in_k_group.py)
+
 ### Sorting and Searching
 
 1. [合并有序列表](leetcode/sorting_and_searching/merge.py)
