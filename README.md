@@ -607,7 +607,7 @@ lambda 函数是一个可以接收任意多个参数（包括可选参数）并�
 
 1. [链表中相邻两项交换位置](leetcode/linked_list/swap_nodes_in_pairs.py)
 
-1. [](leetcode/linked_list/link_list_cycle.py)
+1. [判断链表是否是循环的(快慢指针两倍速跑步法)](leetcode/linked_list/link_list_cycle.py)
 
 1. [](leetcode/linked_list/link_list_cycle_2.py)
 
