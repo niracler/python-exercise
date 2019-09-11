@@ -609,7 +609,7 @@ lambda 函数是一个可以接收任意多个参数（包括可选参数）并�
 
 1. [判断链表是否是循环的(快慢指针两倍速跑步法)](leetcode/linked_list/link_list_cycle.py)
 
-1. [](leetcode/linked_list/link_list_cycle_2.py)
+1. [在判断是否有循环的基础上，判断循环在哪？](leetcode/linked_list/link_list_cycle_2.py)
 
 1. [](leetcode/linked_list/reverse_nodes_in_k_group.py)
 
