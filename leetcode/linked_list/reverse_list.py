@@ -44,16 +44,12 @@ class Solution(object):
         :rtype: ListNode
         """
 
-        result_list = ListNode(-1)
-        node = head.next
+        cur, prev = head, None
 
-        while node:
-            new_node = ListNode(node.val)
-            new_node.next = result_list.next
-            result_list.next = new_node
-            node = node.next
+        while cur:
+            prev, prev.next, cur = cur, prev, cur.next
 
-        return result_list.next
+        return prev
 
 
 if __name__ == '__main__':
@@ -62,7 +58,7 @@ if __name__ == '__main__':
     a.print_node()
 
     solution = Solution()
-    result = solution.reverseList(a)
+    result = solution.reverseList(a.next)
     result.print_node()
 
 # """

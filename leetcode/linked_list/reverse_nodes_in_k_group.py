@@ -69,10 +69,7 @@ class Solution:
         first.next = None
 
         for i in range(1, k):
-            tmp = first
-            first = last
-            last = last.next
-            first.next = tmp
+            first, first.next, last = last, first, last.next
 
         tmp2.next = self.rever(last, k)
 
