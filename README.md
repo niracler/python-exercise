@@ -661,6 +661,16 @@ lambda 函数是一个可以接收任意多个参数（包括可选参数）并�
 
 4. [判断一棵树是否左右对称](leetcode/trees/is_symmetric.py)
 
+### Stack and Queue
+
+1. [用栈实现队列](leetcode/stack_queue/implement_queue_using_stacks.py)
+
+1. [用队列实现栈](leetcode/stack_queue/implement_stack_using_queues.py)
+
+### Heap 
+
+1. [返回数据流中的第k大元素](leetcode/heap/kth_largest_element_in_a_stream.py)
+
 ## 参考文章
 
 - [关于python的面试题](https://github.com/Niracler/python-interview-question)  
