@@ -27,31 +27,38 @@
 # """
 
 class MyStack:
-
     def __init__(self):
         """
         Initialize your data structure here.
         """
+        from collections import deque
+        self.que = deque()
 
     def push(self, x: int) -> None:
         """
         Push element x onto stack.
         """
+        self.que.append(x)
 
     def pop(self) -> int:
         """
         Removes the element on top of the stack and returns that element.
         """
+        return self.que.pop()
 
     def top(self) -> int:
         """
         Get the top element.
         """
+        a = self.que.pop()
+        self.que.append(a)
+        return a
 
     def empty(self) -> bool:
         """
         Returns whether the stack is empty.
         """
+        return not self.que
 
 
 # Your MyStack object will be instantiated and called as such:
@@ -73,6 +80,6 @@ if __name__ == '__main__':
     param_4 = obj.empty()
 
 # """
-# 分析:
+# 分析:   双向队列，也太贱了吧？？
 #
 # """
