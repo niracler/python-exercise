@@ -24,12 +24,12 @@ from typing import List
 
 class Solution:
     def findKthLargest(self, nums: List[int], k: int) -> int:
-        self.min_heap = [-float('inf')] * k
+        self.min_heap = nums[:k]
         heapq.heapify(self.min_heap)
 
         # 构造长度为k的最小堆
         # 要是有比最小堆最上面的大的就弹出最上那个然后放进去, 那么最小堆最上面的那个数就一直是第K大的数
-        for num in nums:
+        for num in nums[k:]:
             if num > self.min_heap[0]:
                 heapq.heappop(self.min_heap)
                 heapq.heappush(self.min_heap, num)
