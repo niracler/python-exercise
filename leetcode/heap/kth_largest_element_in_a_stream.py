@@ -21,10 +21,11 @@
 #
 # url:https://leetcode.com/problems/kth-largest-element-in-a-stream/
 # """
+import heapq
 from typing import List
 
 
-class KthLargest:
+class KthLargest1:
 
     def __init__(self, k: int, nums: List[int]):
         self.nums = nums
@@ -33,7 +34,28 @@ class KthLargest:
     def add(self, val: int) -> int:
         self.nums.append(val)
         self.nums.sort(reverse=True)
-        return self.nums[self.k-1]
+        return self.nums[self.k - 1]
+
+
+class KthLargest:
+
+    def __init__(self, k: int, nums: List[int]):
+
+        self.min_heap = [-float('inf')] * k
+        heapq.heapify(self.min_heap)
+
+        # 构造长度为k的最小堆
+        # 要是有比最小堆最上面的大的就弹出最上那个然后放进去, 那么最小堆最上面的那个数就一直是第K大的数
+        for num in nums:
+            if num > self.min_heap[0]:
+                heapq.heappop(self.min_heap)
+                heapq.heappush(self.min_heap, num)
+
+    def add(self, val: int) -> int:
+        if val > self.min_heap[0]:
+            heapq.heappop(self.min_heap)
+            heapq.heappush(self.min_heap, val)
+        return int(self.min_heap[0])
 
 
 # Your KthLargest object will be instantiated and called as such:
