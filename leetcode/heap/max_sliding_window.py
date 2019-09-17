@@ -32,7 +32,11 @@ class Solution:
 
         windows, maxs = [], []  # windows 存的是下标
 
-        for i, num in enumerate(nums[:k]):
+        # 尝试滑动
+        for i, num in enumerate(nums):
+            if i >= k and windows[0] <= i - k:
+                windows.pop(0)
+
             # 比刚才进去的小的前面的都弹出来
             while windows != [] and nums[windows[0]] < num:
                 windows.pop(0)
@@ -43,24 +47,8 @@ class Solution:
 
             windows.append(i)
 
-        maxs.append(nums[windows[0]])
-
-        # 尝试滑动
-        for i, num in enumerate(nums[k:]):
-            if windows[0] < i+1:
-                windows.pop(0)
-
-            # 比刚才进去的小的前面的都弹出来
-            while windows != [] and nums[windows[0]] < num :
-                windows.pop(0)
-
-            # 比刚才进去的小的后面的都弹出来
-            while windows != [] and nums[windows[-1]] < num:
-                windows.pop()
-
-            windows.append(i + k)
-
-            maxs.append(nums[windows[0]])
+            if i >= k-1:
+                maxs.append(nums[windows[0]])
 
         return maxs
 
@@ -74,6 +62,6 @@ if __name__ == '__main__':
     print(result)
 
 # """
-# 分析:
+# 分析:使用双向队列，比准备进去的小的前面的都弹出来， 比准备进去的小的后面的都弹出来
 #
 # """
