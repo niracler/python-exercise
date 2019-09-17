@@ -28,19 +28,45 @@ from typing import List
 
 class Solution:
     def maxSlidingWindow(self, nums: List[int], k: int) -> List[int]:
-        if not nums:
-            return []
+        if not nums: return []
 
-        res = []
+        windows, maxs = [], []  # windows 存的是下标
+
+        for i, num in enumerate(nums[:k]):
+            # 比刚才进去的小的前面的都弹出来
+            while windows != [] and nums[windows[0]] < num:
+                windows.pop(0)
+
+            # 比刚才进去的小的后面的都弹出来
+            while windows != [] and nums[windows[-1]] < num:
+                windows.pop()
+
+            windows.append(i)
+
+        maxs.append(nums[windows[0]])
+
         # 尝试滑动
-        for i in range(0, len(nums)-k+1):
-            res.append(max(nums[i:i+k]))
+        for i, num in enumerate(nums[k:]):
+            if windows[0] < i+1:
+                windows.pop(0)
 
-        return res
+            # 比刚才进去的小的前面的都弹出来
+            while windows != [] and nums[windows[0]] < num :
+                windows.pop(0)
+
+            # 比刚才进去的小的后面的都弹出来
+            while windows != [] and nums[windows[-1]] < num:
+                windows.pop()
+
+            windows.append(i + k)
+
+            maxs.append(nums[windows[0]])
+
+        return maxs
 
 
 if __name__ == '__main__':
-    nums = [1, 3, -1, -3, 5, 3, 6, 7]
+    nums = [1, 3, 1, 2, 0, 5]
     k = 3
 
     solution = Solution()
