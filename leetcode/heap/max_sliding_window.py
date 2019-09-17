@@ -38,11 +38,11 @@ class Solution:
                 windows.pop(0)
 
             # 比刚才进去的小的前面的都弹出来
-            while windows != [] and nums[windows[0]] < num:
+            while windows and nums[windows[0]] < num:
                 windows.pop(0)
 
             # 比刚才进去的小的后面的都弹出来
-            while windows != [] and nums[windows[-1]] < num:
+            while windows and nums[windows[-1]] < num:
                 windows.pop()
 
             windows.append(i)
