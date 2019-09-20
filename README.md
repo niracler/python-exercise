@@ -671,6 +671,13 @@ lambda 函数是一个可以接收任意多个参数（包括可选参数）并�
 
 1. [返回数据流中的第k大元素](leetcode/heap/kth_largest_element_in_a_stream.py)
 
+### Hash Map
+
+1. [两个数的和等于指定数](leetcode/hash_table/two_sum.py)
+1. [三个数的和等于零的组合](leetcode/hash_table/three_sum.py)
+1. [](leetcode/hash_table/four_sum.py)
+1. [](leetcode/hash_table/three_sum_closest.py)
+
 ## 参考文章
 
 - [关于python的面试题](https://github.com/Niracler/python-interview-question)  
