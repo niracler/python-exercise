@@ -661,6 +661,10 @@ lambda 函数是一个可以接收任意多个参数（包括可选参数）并�
 
 4. [判断一棵树是否左右对称](leetcode/trees/is_symmetric.py)
 
+5. [二叉搜索树的最近公共祖先](leetcode/trees/lowest_common_anoestor.py)
+
+6. [二叉树的最近公共祖先](leetcode/trees/lowest_common_anoestor2.py)
+
 ### Stack and Queue
 
 1. [用栈实现队列](leetcode/stack_queue/implement_queue_using_stacks.py)
@@ -675,7 +679,7 @@ lambda 函数是一个可以接收任意多个参数（包括可选参数）并�
 
 1. [两个数的和等于指定数](leetcode/hash_table/two_sum.py)
 1. [三个数的和等于零的组合](leetcode/hash_table/three_sum.py)
-1. [](leetcode/hash_table/four_sum.py)
+1. [四个数的和为零](leetcode/hash_table/four_sum.py)
 1. [](leetcode/hash_table/three_sum_closest.py)
 
 ## 参考文章
