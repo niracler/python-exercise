@@ -623,23 +623,7 @@ lambda 函数是一个可以接收任意多个参数（包括可选参数）并�
 
 1. [三和五的倍数](leetcode/math/fizz_buzz.py)
 
-### Other
-
-1. [将一个整数转换为二进制并计算里面有多少个1](leetcode/other/hamming_weight.py)
-
-1. [将两个整数转换为二进制并计算有多少位不一样](leetcode/other/hamming_distance.py)
-
-1. [杨辉三角](leetcode/other/pascal_triangle.py)
-
-1. [括号匹配](leetcode/other/valid_parentheses.py)
-
-1. [将一个整数转换为二进制数并逆序](leetcode/other/reverse_bits.py)
-
-1. [找到丢失的数](leetcode/other/missing_number.py)  
-
-1. [罗马数字转换](leetcode/other/roman_to_integer.py)
-
-1. [寻找n以下的质数](leetcode/math/count_primes.py)
+1. [计算x的n次方](leetcode/math/my_pow.py)
 
 ### Dynamic Programming
 
@@ -681,6 +665,24 @@ lambda 函数是一个可以接收任意多个参数（包括可选参数）并�
 1. [三个数的和等于零的组合](leetcode/hash_table/three_sum.py)
 1. [四个数的和为零](leetcode/hash_table/four_sum.py)
 1. [](leetcode/hash_table/three_sum_closest.py)
+
+### Other
+
+1. [将一个整数转换为二进制并计算里面有多少个1](leetcode/other/hamming_weight.py)
+
+1. [将两个整数转换为二进制并计算有多少位不一样](leetcode/other/hamming_distance.py)
+
+1. [杨辉三角](leetcode/other/pascal_triangle.py)
+
+1. [括号匹配](leetcode/other/valid_parentheses.py)
+
+1. [将一个整数转换为二进制数并逆序](leetcode/other/reverse_bits.py)
+
+1. [找到丢失的数](leetcode/other/missing_number.py)  
+
+1. [罗马数字转换](leetcode/other/roman_to_integer.py)
+
+1. [寻找n以下的质数](leetcode/math/count_primes.py)
 
 ## Template
 
