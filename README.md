@@ -627,6 +627,10 @@ lambda 函数是一个可以接收任意多个参数（包括可选参数）并�
 
 1. [对一个数进行开方，结果取整数](leetcode/math/my_sqrt.py)
 
+### Recursion
+
+1. [出现超过一半的数](leetcode/recursion/majority_element.py)
+
 ### Dynamic Programming
 
 1. [爬楼梯](leetcode/dynamic_programming/climb_stairs.py)
