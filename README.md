@@ -593,6 +593,8 @@ lambda 函数是一个可以接收任意多个参数（包括可选参数）并�
 
 1. [判断是不是用同样的字母构成的单词](leetcode/strings/valid_anagram.py)
 
+1. [找字符串的最长公共前缀](leetcode/strings/longest_common_prefix.py)
+
 ### Linked List
 
 1. [删除链表中的当前节点的元素](leetcode/linked_list/delete_node.py)
