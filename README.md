@@ -575,6 +575,8 @@ lambda 函数是一个可以接收任意多个参数（包括可选参数）并�
 
 9. [列表挪位](leetcode/array/rotate_array.py)
 
+10. [列表中重复的数](leetcode/array/find_duplicate.py)
+
 ### Strings
 
 1. [不用额外的空间翻转字符串](leetcode/strings/reverse_string.py)
