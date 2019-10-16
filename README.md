@@ -617,6 +617,8 @@ lambda 函数是一个可以接收任意多个参数（包括可选参数）并�
 
 1. [将每n个结点反转](leetcode/linked_list/reverse_nodes_in_k_group.py)
 
+1. [两个数相加](leetcode/linked_list/add_two_number.py)
+
 ### Sorting and Searching
 
 1. [合并有序列表](leetcode/sorting_and_searching/merge.py)
@@ -630,6 +632,8 @@ lambda 函数是一个可以接收任意多个参数（包括可选参数）并�
 1. [计算x的n次方](leetcode/math/my_pow.py)
 
 1. [对一个数进行开方，结果取整数](leetcode/math/my_sqrt.py)
+
+1. [](leetcode/math/happy_number.py)
 
 ### Recursion
 
@@ -658,6 +662,10 @@ lambda 函数是一个可以接收任意多个参数（包括可选参数）并�
 5. [二叉搜索树的最近公共祖先](leetcode/trees/lowest_common_anoestor.py)
 
 6. [二叉树的最近公共祖先](leetcode/trees/lowest_common_anoestor2.py)
+
+7. [找到加起来等于某个值的路径(DFS)](leetcode/trees/path_sum.py)
+
+
 
 ### Stack and Queue
 
