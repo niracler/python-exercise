@@ -665,7 +665,11 @@ lambda 函数是一个可以接收任意多个参数（包括可选参数）并�
 
 7. [找到加起来等于某个值的路径(DFS)](leetcode/trees/path_sum.py)
 
+8. [简单的二叉树的中序遍历](leetcode/trees/inorder_traversal.py)
 
+8. [简单的二叉树的前序遍历](leetcode/trees/preorder_traversal.py)
+
+8. [简单的二叉树的后序遍历](leetcode/trees/postorder_traversal.py)
 
 ### Stack and Queue
 
