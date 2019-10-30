@@ -651,7 +651,9 @@ lambda 函数是一个可以接收任意多个参数（包括可选参数）并�
 
 ### Trees
 
-1. [获取二叉树的深度](leetcode/trees/max_depth.py)
+1. [获取二叉树最深的深度](leetcode/trees/max_depth.py)
+
+1. [获取二叉树最浅的深度](leetcode/trees/min_depth.py)
 
 2. [二叉树的层序遍历](leetcode/trees/level_order.py)
 
@@ -670,6 +672,8 @@ lambda 函数是一个可以接收任意多个参数（包括可选参数）并�
 8. [简单的二叉树的前序遍历](leetcode/trees/preorder_traversal.py)
 
 8. [简单的二叉树的后序遍历](leetcode/trees/postorder_traversal.py)
+
+
 
 ### Stack and Queue
 
