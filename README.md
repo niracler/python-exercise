@@ -692,6 +692,11 @@ lambda 函数是一个可以接收任意多个参数（包括可选参数）并�
 1. [四个数的和为零](leetcode/hash_table/four_sum.py)
 1. [](leetcode/hash_table/three_sum_closest.py)
 
+### Search
+
+1. [n 皇后](leetcode/search/n_queens.py)
+1. [n 皇后2](leetcode/search/n_queens2.py)
+
 ### Other
 
 1. [将一个整数转换为二进制并计算里面有多少个1](leetcode/other/hamming_weight.py)
