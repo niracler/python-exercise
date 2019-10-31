@@ -710,6 +710,8 @@ lambda 函数是一个可以接收任意多个参数（包括可选参数）并�
 
 1. [寻找n以下的质数](leetcode/math/count_primes.py)
 
+1. [生成有效括号组合](leetcode/other/generate_parentheses.py)
+
 ## Template
 
 1. [关于递归的模板](template/recursion.py)
