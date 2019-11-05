@@ -49,63 +49,6 @@ class Solution:
 
         return True
 
-        # return self.help_me(0, 0)  # 我们来玩数独吧，请帮我, 第一行第一个放个1
-
-    def help_me(self, x, y):
-        """
-        我们先来遍历每一个格,
-        这种方法是不行的，因为一旦成功放下之后就不再改变了？？？
-        :param x:
-        :param y:
-        :return:
-        """
-        # 结束条件
-        if not (x < 9 and y < 9):
-            return True
-
-        # 从这里进来的都是第一次进的
-        # 这个格子有的放么？
-        if self.board[x][y] == '.':
-            # 有位置放，尝试一下是否能放进去
-            myset = self.rule1[x] & self.rule2[y] & self.rule3[x // 3][y // 3]
-
-            if not myset:  # 换一个里面有的数
-                return False
-
-            for i in range(1, 10):
-                # print("x = " + str(x) + ", y = " + str(y) + ", i =  " + str(i))
-                if str(i) in myset:  # 1-9都试试
-                    tmp = str(i)
-                    self.board[x][y] = tmp
-                    self.rule1[x].remove(tmp)
-                    self.rule2[y].remove(tmp)
-                    self.rule3[x // 3][y // 3].remove(tmp)
-
-                    # 看一下行不行
-                    if y < 8:
-                        flag = self.help_me(x, y + 1)
-                    else:
-                        flag = self.help_me(x + 1, 0)
-
-                    if not flag:  # 假如失败了
-                        self.board[x][y] = '.'
-                        self.rule1[x].add(tmp)
-                        self.rule2[y].add(tmp)
-                        self.rule3[x // 3][y // 3].add(tmp)
-                    else:
-                        return True
-
-        else:
-            pass
-
-        # 遍历所有格子
-        if y < 8:
-            flag = self.help_me(x, y + 1)
-        else:
-            flag = self.help_me(x + 1, 0)
-
-        return flag
-
 
 if __name__ == '__main__':
     a = [
