@@ -22,22 +22,30 @@
 
 class Solution:
     def mySqrt(self, x: int) -> int:
-        small = 0
-        big = x
+        """
+
+        :param x:
+        :return:
+        """
+        small, big = 0, x
+        res = 0
 
         # 使用二分查找
-        while small != big and small+1 != big:
+        while small <= big:
             mid = (big + small) // 2
-            if mid*mid > x:
-                big = mid
+            if mid * mid > x:
+                big = mid - 1
+            elif mid * mid < x:
+                small = mid + 1
+                res = mid
             else:
-                small = mid
+                return mid
 
-        return small
+        return res
 
 
 if __name__ == '__main__':
-    a = 4
+    a = 1
 
     solution = Solution()
     result = solution.mySqrt(a)
