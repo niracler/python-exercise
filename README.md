@@ -695,8 +695,12 @@ lambda 函数是一个可以接收任意多个参数（包括可选参数）并�
 ### Search
 
 1. [n 皇后](leetcode/search/n_queens.py)
+
 1. [n 皇后2](leetcode/search/n_queens2.py)
+
 1. [是否是正确的数读](leetcode/search/valid_sudoku.py)
+
+1. [解决一道数独题](leetcode/search/sudoku_solver.py)
 
 ### Other
 
