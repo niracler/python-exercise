@@ -696,6 +696,7 @@ lambda 函数是一个可以接收任意多个参数（包括可选参数）并�
 
 1. [n 皇后](leetcode/search/n_queens.py)
 1. [n 皇后2](leetcode/search/n_queens2.py)
+1. [是否是正确的数读](leetcode/search/valid_sudoku.py)
 
 ### Other
 
@@ -722,6 +723,8 @@ lambda 函数是一个可以接收任意多个参数（包括可选参数）并�
 1. [关于递归的模板](template/recursion.py)
 2. [leetcode的题目的刷题模板](template/demo.py)
 1. [关于分治方法的模板](template/divide_conquer.py)
+1. [广度优先](template/bfs.py)
+1. [深度优先](template/dfs.py)
 
 ## 参考文章
 
