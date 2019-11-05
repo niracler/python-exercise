@@ -688,8 +688,11 @@ lambda 函数是一个可以接收任意多个参数（包括可选参数）并�
 ### Hash Map
 
 1. [两个数的和等于指定数](leetcode/hash_table/two_sum.py)
+
 1. [三个数的和等于零的组合](leetcode/hash_table/three_sum.py)
+
 1. [四个数的和为零](leetcode/hash_table/four_sum.py)
+
 1. [](leetcode/hash_table/three_sum_closest.py)
 
 ### Search
@@ -725,10 +728,16 @@ lambda 函数是一个可以接收任意多个参数（包括可选参数）并�
 ## Template
 
 1. [关于递归的模板](template/recursion.py)
-2. [leetcode的题目的刷题模板](template/demo.py)
+
+1. [leetcode的题目的刷题模板](template/demo.py)
+
 1. [关于分治方法的模板](template/divide_conquer.py)
+
 1. [广度优先](template/bfs.py)
+
 1. [深度优先](template/dfs.py)
+
+1. [二分查找的模板](template/bs.py)
 
 ## 参考文章
 
