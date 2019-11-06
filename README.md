@@ -675,6 +675,10 @@ lambda 函数是一个可以接收任意多个参数（包括可选参数）并�
 
 1. [实现一颗字典树](leetcode/trees/trie.py)
 
+1. [网格表中的单词搜索](leetcode/trees/word_search.py)
+
+1. [网格表中的多个单词的搜索2](leetcode/trees/word_search_2.py)
+
 ### Stack and Queue
 
 1. [用栈实现队列](leetcode/stack_queue/implement_queue_using_stacks.py)
