@@ -655,25 +655,25 @@ lambda 函数是一个可以接收任意多个参数（包括可选参数）并�
 
 1. [获取二叉树最浅的深度](leetcode/trees/min_depth.py)
 
-2. [二叉树的层序遍历](leetcode/trees/level_order.py)
+1. [二叉树的层序遍历](leetcode/trees/level_order.py)
 
-3. [判断一棵树是否是二分查找树](leetcode/trees/is_valid_bst.py)
+1. [判断一棵树是否是二分查找树](leetcode/trees/is_valid_bst.py)
 
-4. [判断一棵树是否左右对称](leetcode/trees/is_symmetric.py)
+1. [判断一棵树是否左右对称](leetcode/trees/is_symmetric.py)
 
-5. [二叉搜索树的最近公共祖先](leetcode/trees/lowest_common_anoestor.py)
+1. [二叉搜索树的最近公共祖先](leetcode/trees/lowest_common_anoestor.py)
 
-6. [二叉树的最近公共祖先](leetcode/trees/lowest_common_anoestor2.py)
+1. [二叉树的最近公共祖先](leetcode/trees/lowest_common_anoestor2.py)
 
-7. [找到加起来等于某个值的路径(DFS)](leetcode/trees/path_sum.py)
+1. [找到加起来等于某个值的路径(DFS)](leetcode/trees/path_sum.py)
 
-8. [简单的二叉树的中序遍历](leetcode/trees/inorder_traversal.py)
+1. [简单的二叉树的中序遍历](leetcode/trees/inorder_traversal.py)
 
-8. [简单的二叉树的前序遍历](leetcode/trees/preorder_traversal.py)
+1. [简单的二叉树的前序遍历](leetcode/trees/preorder_traversal.py)
 
-8. [简单的二叉树的后序遍历](leetcode/trees/postorder_traversal.py)
+1. [简单的二叉树的后序遍历](leetcode/trees/postorder_traversal.py)
 
-
+1. [实现一颗字典树](leetcode/trees/trie.py)
 
 ### Stack and Queue
 
@@ -745,3 +745,4 @@ lambda 函数是一个可以接收任意多个参数（包括可选参数）并�
 
 - [关于python的面试题](https://github.com/Niracler/python-interview-question)  
 - [python-exercises](https://www.w3resource.com/python-exercises/)
+- [How to get the ASCII value of a character?](https://stackoverflow.com/questions/227459/how-to-get-the-ascii-value-of-a-character)
