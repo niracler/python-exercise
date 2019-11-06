@@ -13,8 +13,7 @@ class Trie:
         Initialize your data structure here.
         在这里初始化你的数据结构
         """
-        self.ALPHABET_SIZE = 256
-        self.children = [None] * self.ALPHABET_SIZE
+        self.children = {}
 
         # is_end_of_word is True if Node if node represent
         # the end of the word
@@ -29,9 +28,9 @@ class Trie:
             self.is_end_of_word = True
             return
 
-        if not self.children[ord(word[0])]:
-            self.children[ord(word[0])] = Trie()
-        self.children[ord(word[0])].insert(word[1:])
+        if word[0] not in self.children:
+            self.children[word[0]] = Trie()
+        self.children[word[0]].insert(word[1:])
 
     def search(self, word: str) -> bool:
         """
@@ -41,10 +40,10 @@ class Trie:
         if not word and self.is_end_of_word == True:
             return True
 
-        if not word or not self.children[ord(word[0])]:
+        if not word or not self.children.get(word[0], False):
             return False
 
-        return self.children[ord(word[0])].search(word[1:])
+        return self.children[word[0]].search(word[1:])
 
     def startsWith(self, prefix: str) -> bool:
         """
@@ -55,10 +54,10 @@ class Trie:
         if not prefix:
             return True
 
-        if not self.children[ord(prefix[0])]:
+        if not self.children.get(prefix[0], False):
             return False
 
-        return self.children[ord(prefix[0])].startsWith(prefix[1:])
+        return self.children[prefix[0]].startsWith(prefix[1:])
 
 
 if __name__ == '__main__':
@@ -75,6 +74,6 @@ if __name__ == '__main__':
     print(trie.search("appl"))  # return False
 
 # """
-# 分析:
+# 分析:使用字典会更快
 #
 # """
