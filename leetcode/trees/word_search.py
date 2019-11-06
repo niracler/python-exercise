@@ -40,9 +40,6 @@ class Solution:
         if not word:
             return True
 
-        # print(word[0])
-        # print(visited)
-
         if x - 1 >= 0 and board[x - 1][y] == word[0] and (str(x - 1) + "," + str(y) not in visited):  # 上
             visited.add(str(x - 1) + "," + str(y))
             if self.help_me(board, x - 1, y, visited, word[1:]):
