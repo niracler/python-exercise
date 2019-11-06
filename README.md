@@ -739,6 +739,8 @@ lambda 函数是一个可以接收任意多个参数（包括可选参数）并�
 
 1. [二分查找的模板](template/bs.py)
 
+1. [字典树的模板 (Trie Tree)](template/trie_tree.py)
+
 ## 参考文章
 
 - [关于python的面试题](https://github.com/Niracler/python-interview-question)  
