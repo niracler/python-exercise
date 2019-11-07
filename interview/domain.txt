@@ -1,0 +1,6 @@
+*.sports.sina.com.cn
+*.sina.com.cn
+*.baidu.com
+*.tencent.com
+*.com
+*.cn

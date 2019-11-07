@@ -22,6 +22,8 @@
 # 例如,给定单词组 ["picture", "turepic", "icturep", "word", "ordw"] ,他们包含了 2 种循环单
 # 词,分别是 ["picture", "turepic", "icturep"] 和 ["word", "ordw"] 。这时你的函数应该返回 2。
 #
+# 公司: smartx
+#
 # """
 
 
