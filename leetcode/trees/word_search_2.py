@@ -26,111 +26,59 @@
 # url:https://leetcode.com/problems/word-search-ii/
 # """
 
+import collections
 from typing import List
 
 
-class Trie:
-    def __init__(self):
-        """
-        Initialize your data structure here.
-        在这里初始化你的数据结构
-        """
-        self.children = {}
-
-        # is_end_of_word is True if Node if node represent
-        # the end of the word
-        self.is_end_of_word = False
-
-    def insert(self, word: str) -> None:
-        """
-        Inserts a word into the trie.
-        向这棵树插入一个单词
-        """
-        if not word:
-            self.is_end_of_word = True
-            return
-
-        if word[0] not in self.children:
-            self.children[word[0]] = Trie()
-        self.children[word[0]].insert(word[1:])
-
-    def search(self, word: str) -> bool:
-        """
-        Returns if the word is in the trie.
-        查找这单词
-        """
-        if not word and self.is_end_of_word == True:
-            return True
-
-        if not word or not self.children.get(word[0], False):
-            return False
-
-        return self.children[word[0]].search(word[1:])
-
-    def startsWith(self, prefix: str) -> bool:
-        """
-        Returns if there is any word in the trie that starts with the given prefix.
-        以这个单词开头的字符串
-        """
-
-        if not prefix:
-            return True
-
-        if not self.children.get(prefix[0], False):
-            return False
-
-        return self.children[prefix[0]].startsWith(prefix[1:])
-
-
 class Solution:
+    def __init__(self):
+        self.dx = [-1, 1, 0, 0]
+        self.dy = [0, 0, -1, 1]
+        self.END_OF_WORD = '#'
+
     def findWords(self, board: List[List[str]], words: List[str]) -> List[str]:
-        res = []
+        ## 假如是空
+        if not board or not board[0]: return []
+        if not words: return []
+
+        self.result = set()
+
+        # 建立trie树
+        root = collections.defaultdict()
+        for word in words:
+            node = root
+            for char in word:
+                node = node.setdefault(char, collections.defaultdict())
+
+            node[self.END_OF_WORD] = self.END_OF_WORD
+
+        # 矩阵的长宽
+        self.m, self.n = len(board), len(board[0])
 
         # 遍历这个图，找开头那个字母
-        for i in range(len(board)):
-            for j in range(len(board[0])):
-                for word in words:
-                    if board[i][j] == word[0]:
-                        # 找到开头字母了，我们来深搜一下
-                        visited = set()
-                        visited.add(str(i) + "," + str(j))
-                        if self.help_me(board, i, j, visited, word[1:]):
-                            res.append(word)
-                            words.remove(word)
+        for i in range(self.m):
+            for j in range(self.n):
+                if board[i][j] in root:
+                    self._dfs(board, i, j, "", root)
 
-        return res
+        return list(self.result)
 
-    def help_me(self, board, x, y, visited, word):
-        if not word:
-            return True
+    def _dfs(self, board, i, j, cur_word, cur_dict):
+        cur_word += board[i][j]  # 当前拼出来的单词
+        cur_dict = cur_dict[board[i][j]]  # 当前的可选项
 
-        if x - 1 >= 0 and board[x - 1][y] == word[0] and (str(x - 1) + "," + str(y) not in visited):  # 上
-            visited.add(str(x - 1) + "," + str(y))
-            if self.help_me(board, x - 1, y, visited, word[1:]):
-                return True
-            else:
-                visited.remove(str(x - 1) + "," + str(y))
+        if self.END_OF_WORD in cur_dict:
+            self.result.add(cur_word)
 
-        if x + 1 < len(board) and board[x + 1][y] == word[0] and (str(x + 1) + "," + str(y) not in visited):  # 下
-            visited.add(str(x + 1) + "," + str(y))
-            if self.help_me(board, x + 1, y, visited, word[1:]):
-                return True
-            else:
-                visited.remove(str(x + 1) + "," + str(y))
+        tmp, board[i][j] = board[i][j], '@'
 
-        if y - 1 >= 0 and board[x][y - 1] == word[0] and (str(x) + "," + str(y - 1) not in visited):  # 左
-            visited.add(str(x) + "," + str(y - 1))
-            if self.help_me(board, x, y - 1, visited, word[1:]):
-                return True
-            else:
-                visited.remove(str(x) + "," + str(y - 1))
+        for k in range(4):
+            x, y = i + self.dx[k], j + self.dy[k]
+            if 0 <= x < self.m and 0 <= y < self.n \
+                    and board[x][y] != '@' and board[x][y] in cur_dict:
+                self._dfs(board, x, y, cur_word, cur_dict)
 
-        if y + 1 < len(board[0]) and board[x][y + 1] == word[0] and (str(x) + "," + str(y + 1) not in visited):  # 右
-            visited.add(str(x) + "," + str(y + 1))
-            if self.help_me(board, x, y + 1, visited, word[1:]):
-                return True
-            else:
-                visited.remove(str(x) + "," + str(y + 1))
+        board[i][j] = tmp
 
 
 if __name__ == '__main__':
@@ -148,5 +96,7 @@ if __name__ == '__main__':
 
 # """
 # 分析:
+# 1. dfs 太慢了
+# 2. trei树
 #
 # """
