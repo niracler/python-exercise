@@ -637,7 +637,7 @@ lambda 函数是一个可以接收任意多个参数（包括可选参数）并�
 
 1. [是否是 2 的幂次方](leetcode/math/power_of_two.py)
 
-1. [](leetcode/math/count_bit.py)
+1. [小于 N 的所有数的二进制位各有多少个一](leetcode/math/count_bit.py)
 
 ### Recursion
 
