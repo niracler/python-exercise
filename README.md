@@ -713,6 +713,10 @@ lambda 函数是一个可以接收任意多个参数（包括可选参数）并�
 
 1. [解决一道数独题](leetcode/search/sudoku_solver.py)
 
+### DFS
+
+1. [判断两棵树是否相等](leetcode/dfs/same_tree.py)
+
 ### Other
 
 1. [将一个整数转换为二进制并计算里面有多少个1](leetcode/other/hamming_weight.py)
