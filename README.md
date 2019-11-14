@@ -579,6 +579,8 @@ lambda 函数是一个可以接收任意多个参数（包括可选参数）并�
 
 ### Strings
 
+1. [寻找最长不含有重复字符的子串](leetcode/strings/length_of_longest_substring.go)
+
 1. [不用额外的空间翻转字符串](leetcode/strings/reverse_string.py)
 
 1. [翻转数字](leetcode/strings/reverse.py)
