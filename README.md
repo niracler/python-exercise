@@ -691,6 +691,8 @@ lambda 函数是一个可以接收任意多个参数（包括可选参数）并�
 
 1. [用队列实现栈](leetcode/stack_queue/implement_stack_using_queues.py)
 
+1. [棒球得分记录器](leetcode/stack_queue/baseball_game.py)
+
 ### Heap 
 
 1. [返回数据流中的第k大元素](leetcode/heap/kth_largest_element_in_a_stream.py)
