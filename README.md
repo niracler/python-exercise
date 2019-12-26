@@ -707,7 +707,7 @@ lambda 函数是一个可以接收任意多个参数（包括可选参数）并�
 
 1. [](leetcode/hash_table/three_sum_closest.py)
 
-1. [](leetcode/hash_table/tiny_url.py)
+1. [短链接的编码与解码](leetcode/hash_table/tiny_url.py)
 
 ### Search
 
