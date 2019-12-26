@@ -709,6 +709,8 @@ lambda 函数是一个可以接收任意多个参数（包括可选参数）并�
 
 1. [短链接的编码与解码](leetcode/hash_table/tiny_url.py)
 
+1. [将含有相同字母的单词分组](leetcode/hash_table/group_anagrams.py)
+
 ### Search
 
 1. [n 皇后](leetcode/search/n_queens.py)
