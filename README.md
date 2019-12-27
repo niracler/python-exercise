@@ -711,6 +711,8 @@ lambda 函数是一个可以接收任意多个参数（包括可选参数）并�
 
 1. [将含有相同字母的单词分组](leetcode/hash_table/group_anagrams.py)
 
+1. [对一个含有随机指针的链表进行深拷贝](leetcode/hash_table/copy_random_list.py)
+
 ### Search
 
 1. [n 皇后](leetcode/search/n_queens.py)
